@@ -373,36 +373,7 @@ if sys.platform == 'darwin':
 myname = "Bastian Kleineidam"
 myemail = "bastian.kleineidam@web.de"
 
-data_files = [
-    ('share/linkchecker',
-        ['config/linkcheckerrc',
-        'doc/html/lccollection.qhc', 'doc/html/lcdoc.qch']),
-    ('share/linkchecker/examples',
-        ['cgi-bin/lconline/leer.html.en',
-         'cgi-bin/lconline/leer.html.de',
-         'cgi-bin/lconline/index.html',
-         'cgi-bin/lconline/lc_cgi.html.en',
-         'cgi-bin/lconline/lc_cgi.html.de',
-         'cgi-bin/lconline/check.js',
-         'cgi-bin/lc.wsgi',
-         'config/linkchecker.apache2.conf',
-        ]),
-]
-
-for (src, dst) in list_message_files(AppName):
-    data_files.append((dst, [src]))
-
-if os.name == 'posix':
-    data_files.append(('share/man/man1', ['doc/en/linkchecker.1']))
-    data_files.append(('share/man/man5', ['doc/en/linkcheckerrc.5']))
-    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1']))
-    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
-    data_files.append(('share/linkchecker/examples',
-              ['config/linkchecker-completion',
-               'doc/examples/check_blacklist.sh',
-               'doc/examples/check_for_x_errors.sh',
-               'doc/examples/check_urls.sh']))
-    data_files.append(('share/applications', ['doc/linkchecker.desktop']))
+data_files = []
 
 args = dict(
     name = AppName,
